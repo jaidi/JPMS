@@ -1,0 +1,18 @@
+body
+{
+	background-color:#abcabc;
+}
+
+.cLabel
+{
+	display: block;
+	float: left;
+	width: 10em;
+}
+
+.cInput
+{
+	display: block;
+	float: left;
+	width: 20em;
+}
