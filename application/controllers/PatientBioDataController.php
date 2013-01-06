@@ -10,7 +10,17 @@ class PatientBioDataController extends CI_Controller {
 
  function index()
  {
-	$this->load->view('PatientBioData_view');
+	if($this->session->userdata('logged_in'))
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
+		$this->load->view('PatientRecord_view', $data);
+	}
+	else
+	{
+		//If no session, redirect to login page
+		redirect('login', 'refresh');
+	}
  }
  
  function validateAndLoad(){
@@ -43,8 +53,8 @@ class PatientBioDataController extends CI_Controller {
 
  function add($almonerNumber){
 
-   $data = array(
-        'almoner_number' =>$almonerNumber,
+	$data = array(
+		'almoner_number' =>$almonerNumber,
 		'name' => $this->input->post('name'),
 		'age' => $this->input->post('age'),
 		'sex' => $this->input->post('sex'),
@@ -55,9 +65,8 @@ class PatientBioDataController extends CI_Controller {
 		'bed_number' => $this->input->post('bed_number'),
 		'admitted_from' =>$this->input->post('admitted_from'));
 
-
- 	$this->PatientBioData->add($data);
- }
+		$this->PatientBioData->add($data);
+	}
 
 }
 
