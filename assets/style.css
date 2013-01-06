@@ -1,6 +1,6 @@
 body
 {
-	background-color:#abcabc;
+	background-color:#eee;
 }
 
 .cLabel
@@ -14,5 +14,18 @@ body
 {
 	display: block;
 	float: left;
-	width: 20em;
+	width: 16em;
+	border: 1px solid #aaa;
+	margin-bottom: 1em;
+}
+
+.cInputArea
+{
+	display: block;
+	width: 16em;
+	height: 6em;
+	border: 1px solid #aaa;
+	float: left;
+	position: relative;
+	margin-bottom: 1em;
 }

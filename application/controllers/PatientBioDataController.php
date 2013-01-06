@@ -10,7 +10,17 @@ class PatientBioDataController extends CI_Controller {
 
  function index()
  {
-	$this->load->view('PatientBioData_view');
+	if($this->session->userdata('logged_in'))
+	{
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
+		$this->load->view('PatientRecord_view', $data);
+	}
+	else
+	{
+		//If no session, redirect to login page
+		redirect('login', 'refresh');
+	}
  }
  
  function validateAndLoad(){
@@ -39,12 +49,13 @@ class PatientBioDataController extends CI_Controller {
 		 //Go to private area
 	//	$data['result'] = "waaah saaiin waah";
 	$data = 	$this->existingBioData($this->input->post('almoner_number'));
-		 $this->load->view('test', $data );
+		 $this->load->view('home_view', $data );
 	}
  
  }
 
  function addOrUpdate($almonerNumber){
+
 
    $data = array(
    		'almoner_number'	=> $almonerNumber,
@@ -97,6 +108,8 @@ class PatientBioDataController extends CI_Controller {
 	}
  	return $data;
  }
+
+	
 
 
 }
