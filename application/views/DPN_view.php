@@ -7,7 +7,7 @@
                 </div>-->
                 <div id="customWindowContent" style="overflow: hidden">
                     <div style="margin: 10px; width: 30em">
-						<?php echo form_open('DPN/validateAndLoad'); ?>
+						<?php echo form_open('DpnController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
 						<br/>
