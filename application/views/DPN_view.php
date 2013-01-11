@@ -1,12 +1,12 @@
-   <div style="width: 100%; height: 550px;" id="jqxWidget">
+   <div style="width: 100%; height: 550px auto;" id="jqxWidget">
         <div
             id="mainDemoContainer">
             <div id="customWindow">
                 <!--<div id="customWindowHeader">
                     <span id="captureContainer" style="float: left">Patient Bio Data</span>
                 </div>-->
-                <div id="customWindowContent" style="overflow: hidden">
-                    <div style="margin: 10px; width: 30em">
+                <div id="customWindowContent" style="overflow: hidden; width:100%;">
+                    <div style="margin: 10px; float:left; width: 25% auto">
 						<?php echo form_open('DPN/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
@@ -51,6 +51,23 @@
                             <input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
                         </div>
                         </form>
+					</div>
+					<div id="accordion" style="margin: 10px; float:left; width:70%;">
+						<h3>PGR Remarks</h3>
+						<div>
+							<textarea class="cInputArea" style="width:500px" rows="5" cols="300" size="256" id="plan" name="plan"></textarea>
+							<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
+						</div>
+						<h3>SR Remarks</h3>
+						<div>
+							<textarea class="cInputArea" style="width:500px" rows="5" cols="300" size="256" id="plan" name="plan"></textarea>
+							<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
+						</div>
+						<h3>VS Remarks</h3>
+						<div>
+							<textarea class="cInputArea" style="width:500px" rows="5" cols="300" size="256" id="plan" name="plan"></textarea>
+							<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
+						</div>
 					</div>
                 </div>
             </div>
