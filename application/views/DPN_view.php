@@ -5,9 +5,11 @@
                 <!--<div id="customWindowHeader">
                     <span id="captureContainer" style="float: left">Patient Bio Data</span>
                 </div>-->
-                <div id="customWindowContent" style="overflow: hidden; width:100%;">
-                    <div style="margin: 10px; float:left; width: 25% auto">
-						<?php echo form_open('DPN/validateAndLoad'); ?>
+
+                <div id="customWindowContent" style="overflow: hidden">
+                    <div style="margin: 10px; width: 30em">
+						<?php echo form_open('DpnController/validateAndLoad'); ?>
+
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
 						<br/>

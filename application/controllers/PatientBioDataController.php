@@ -1,19 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class PatientBioDataController extends CI_Controller {
-
+	 private $session_data;// = $this->session->userdata('logged_in');
  function __construct()
  {
 	parent::__construct();
     $this->load->model('PatientBioData');
+    $this->session_data = $this->session->userdata('logged_in');
  }
 
  function index()
  {
 	if($this->session->userdata('logged_in'))
 	{
-		$session_data = $this->session->userdata('logged_in');
-		$data['username'] = $session_data['username'];
+		
+		$data['username'] = $this->session_data['username'];
 		$this->load->view('PatientRecord_view', $data);
 	}
 	else
@@ -48,15 +49,15 @@ class PatientBioDataController extends CI_Controller {
 	{
 		 //Go to private area
 	//	$data['result'] = "waaah saaiin waah";
-	$data = 	$this->existingBioData($this->input->post('almoner_number'));
+	$data = 	$this->addOrUpdate($this->input->post('almoner_number'));
 		 $this->load->view('home_view', $data );
 	}
  
  }
 
  function addOrUpdate($almonerNumber){
-
-
+$this->session_data = $this->session->userdata('logged_in');
+$username = $this->session_data['username'];
    $data = array(
    		'almoner_number'	=> $almonerNumber,
 		'name' 				=> $this->input->post('name'),
@@ -67,12 +68,13 @@ class PatientBioDataController extends CI_Controller {
 		'address'			=> $this->input->post('address'),
 		'telephone_number' 	=> $this->input->post('telephone_number'),
 		'bed_number' 		=> $this->input->post('bed_number'),
-		'admitted_from' 	=> $this->input->post('admitted_from'));
+		'admitted_from' 	=> $this->input->post('admitted_from'),
+		'created_by'		=> $username);
    
    $alreadyExists =  $this->PatientBioData->getByAlmoner($almonerNumber);
  //  $this->PatientBioData->add($data); 
   // echo $alreadyExists;
-   if (is_null($alreadyExists)){
+   if ($alreadyExists->num_rows==0){
    		//array_push($data, 'almoner_number' => $almonerNumber);
  	//	$data['almoner_number'] = $almonerNumber;
  		return $this->PatientBioData->add($data);   		
@@ -92,7 +94,7 @@ class PatientBioDataController extends CI_Controller {
  	* add null check
  	*
  	**/
-
+ 	$data = array();
  	foreach ($query->result() as $row)
 	{
 		$data['almoner_number'] = $row->almoner_number;
