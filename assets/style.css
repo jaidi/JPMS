@@ -29,3 +29,10 @@ body
 	position: relative;
 	margin-bottom: 1em;
 }
+
+.cAccordionContents
+{
+	height:100px auto;
+	width: 610px;
+}
+

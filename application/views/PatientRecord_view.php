@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxwindow.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="../../jqwidgets/jqxsplitter.js"></script>
 	<!-- Add End Patient Bio Data libraries -->
 	<script>
 	$(function() {
@@ -113,6 +114,10 @@
 	});
 	</script>
 	<script type="text/javascript">
+	   $(document).ready(function () {
+            var theme = getTheme();
+            $('#mainSplitter').jqxSplitter({ width: 600, height: 480, theme: theme, panels: [{ size: 300 }, { size: 300}] });
+        });
         /*var customButtonsDemo = (function () {
             var _collapsed = false;
             function _createElements() {
@@ -178,7 +183,7 @@
 	}
 	</style>
  </head>
- <body>
+ <body class="default">
 	<h2>Welcome <?php echo $username; ?>!</h2>
 	<div id="tabs">
 		<ul>
@@ -190,10 +195,12 @@
 			<?php $this->load->view('PatientBioData_view');	?>
 		</div>
 		<div id="tabs-2">
-			<?php $this->load->view('DPN_view');	?>
+			<?php $this->load->view('DPN_view'); ?>
 		</div>
 		<div id="tabs-3">
+
 			<?php $this->load->view('DPN_view');	?>
+
 		</div>
 	</div>
  </body>
