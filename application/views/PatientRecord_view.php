@@ -198,7 +198,9 @@
 			<?php $this->load->view('DPN_view'); ?>
 		</div>
 		<div id="tabs-3">
-			<?php $this->load->view('drugs_view'); ?>
+
+			<?php $this->load->view('DPN_view');	?>
+
 		</div>
 	</div>
  </body>

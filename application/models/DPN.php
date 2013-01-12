@@ -23,5 +23,17 @@ Class DPN extends CI_Model{
 		$this->db->where('almoner_number', $almonerNumber);
 		return $this->db->get('dpn');
 	}
+	function getIdByAlmoner($almonerNumber){
+		//$this->db->select('id');
+		$this->db->where('almoner_number', $almonerNumber);
+		$query = $this->db->get('dpn');
+		if ($query->num_rows>0){
+			foreach ($query->result() as $rows)
+			{
+				return $rows->id;
+			}
+		}
+		return -1;
+	}
  }
  ?>

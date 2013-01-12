@@ -37,5 +37,14 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+
+/*		******************************************
+						My Constants
+		******************************************	*/
+
+define('VS',	'vs');
+define('SR',	'sr');
+define('PGR',	'pgr');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
