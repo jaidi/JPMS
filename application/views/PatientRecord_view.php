@@ -184,7 +184,7 @@
 		<ul>
 			<li><a href="#tabs-1">Patient Bio Data</a></li>
 			<li><a href="#tabs-2">Daily Progress Notes</a></li>
-			<li><a href="#tabs-3">Third</a></li>
+			<li><a href="#tabs-3">Drugs</a></li>
 		</ul>
 		<div id="tabs-1">
 			<?php $this->load->view('PatientBioData_view');	?>
@@ -193,7 +193,7 @@
 			<?php $this->load->view('DPN_view');	?>
 		</div>
 		<div id="tabs-3">
-			Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.
+			<?php $this->load->view('DPN_view');	?>
 		</div>
 	</div>
  </body>
