@@ -2,9 +2,6 @@
         <div
             id="mainDemoContainer">
             <div id="customWindow">
-                <!--<div id="customWindowHeader">
-                    <span id="captureContainer" style="float: left">Patient Bio Data</span>
-                </div>-->
                 <div id="customWindowContent" style="overflow: hidden; width:100%;">
                     <div style="margin: 10px; float:left; width: 25% auto">
 						<?php echo form_open('DPN/validateAndLoad'); ?>
@@ -57,7 +54,7 @@
 						<h3>PGR Remarks</h3>
 						<div>
 							<div class="cAccordionContents">
-								<?php echo form_open('testuri/testfunc/remark/pgr'); ?>
+								<?php echo form_open('DpnRemarksController/validateAndLoad/remark/pgr'); ?>
 								<textarea class="cInputArea" style="width:600px" rows="5" cols="300" size="256" id="pgr_remarks" name="pgr_remarks"></textarea>
 								<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
 								</form>
@@ -66,7 +63,7 @@
 						<h3>SR Remarks</h3>
 						<div>
 							<div class="cAccordionContents">
-								<?php echo form_open('testuri/testfunc/remark/sr'); ?>
+								<?php echo form_open('DpnRemarksController/validateAndLoad/remark/sr'); ?>
 								<textarea class="cInputArea" style="width:600px" rows="5" cols="300" size="256" id="sr_remarks" name="sr_remarks"></textarea>
 								<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
 								</form>
@@ -75,7 +72,7 @@
 						<h3>VS Remarks</h3>
 						<div>
 							<div class="cAccordionContents">
-								<?php echo form_open('testuri/testfunc/remark/vs'); ?>
+								<?php echo form_open('DpnRemarksController/validateAndLoad/remark/vs'); ?>
 								<textarea class="cInputArea" style="width:600px" rows="5" cols="300" size="256" id="vs_remarks" name="vs_remarks"></textarea>
 								<input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
 								</form>
