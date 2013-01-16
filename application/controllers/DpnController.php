@@ -7,6 +7,7 @@ class DpnController extends CI_Controller {
 		parent::__construct();
 	    $this->load->model('DPN');
 	    $this->load->model('PatientBioData');
+	    
 	 }
 
 	 function index(){
@@ -60,8 +61,8 @@ class DpnController extends CI_Controller {
 			'pain'			=> $this->input->post('pain'),
 			'problems' 	=> $this->input->post('problems'),
 			'plan' 		=> $this->input->post('plan'),
-			'action' 	=> $this->input->post('action')
-			'created_by' =>$session_data['username']);
+			'action' 	=> $this->input->post('action'),
+			'created_by' => $session_data['username']);
 			 $this->DPN->add($data);
 		}
 	}

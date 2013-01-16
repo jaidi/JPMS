@@ -12,9 +12,26 @@
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcore.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxwindow.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxbuttons.js"></script>
-	<script type="text/javascript" src="../../jqwidgets/jqxsplitter.js"></script>
+	<script type="text/javascript" src="../assets/jquery/jqwidgets/jqxsplitter.js"></script>
 	<!-- Add End Patient Bio Data libraries -->
+	
+	<!-- Add Begin Drugs libraries -->
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcombobox.js"></script>
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxexpander.js"></script>
+	<!-- Add End Drugs libraries -->
+		
 	<script>
+	 $(function() {
+	    $( "#start_date" ).datepicker();
+	  });
+
+	  $(function() {
+	    $( "#end_date" ).datepicker();
+	  });
 	$(function() {
 		$( "#accordion" ).accordion();
 		
@@ -144,6 +161,29 @@
             customButtonsDemo.config.theme = theme;
             customButtonsDemo.init();
         });*/
+        function addRow() {
+        	 
+            var table = $("#drugs_table");
+ 
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+ 
+           // var cell1 = row.insertCell(0);
+            var serialCol = row.insertCell(0);
+            seriCol.innerHTML = rowCount;
+            //cell1.appendChild(element1);
+
+            
+            var drugCell = row.insertCell(1);
+            drugCell.innerHTML = $("#drugs").value;
+ 
+            var startDateCell = row.insertCell(2);
+            startDateCell.innerHTML = $("#start_date").value;
+
+            var endDateCell = row.insertCell(2);
+            endDateCell.innerHTML = $("#end_date").value;
+ 
+        }
     </script> 
 	<style>
 	body{
@@ -199,7 +239,7 @@
 		</div>
 		<div id="tabs-3">
 
-			<?php $this->load->view('DPN_view');	?>
+			<?php $this->load->view('drugs_view');	?>
 
 		</div>
 	</div>

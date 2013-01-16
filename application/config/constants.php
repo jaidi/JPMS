@@ -46,5 +46,18 @@ define('VS',	'vs');
 define('SR',	'sr');
 define('PGR',	'pgr');
 
+/*		**************Drugs array********************/
+$DRUGS_ARRAY= array(
+  'ponstan',
+  'aspirin',
+  'ephidreen',
+  'pencilin');
+
+define('DRUGS',serialize($DRUGS_ARRAY));
+/* 		*****************drug routes***************/
+$DRUGS_ROUTES_ARRAY = array(
+  'oral',
+  'vein');
+define('DRUG_ROUTES',serialize($DRUGS_ROUTES_ARRAY));
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
