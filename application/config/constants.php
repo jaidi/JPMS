@@ -51,7 +51,15 @@ $DRUGS_ARRAY= array(
   'ponstan',
   'aspirin',
   'ephidreen',
-  'pencilin');
+  'pencilin',
+  'belladona',
+  'rhus tox',
+  'arnica',
+  'zestril',
+  'loprin',
+  'sharbat-e-toot siyah',
+  'sharbat-e-muqawiy-e-qalb',
+  'arq-e-takhum balngoo');
 
 define('DRUGS',serialize($DRUGS_ARRAY));
 /* 		*****************drug routes***************/

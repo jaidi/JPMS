@@ -38,26 +38,7 @@
 		var availableTags = [
 			"ActionScript",
 			"AppleScript",
-			"Asp",
-			"BASIC",
-			"C",
-			"C++",
-			"Clojure",
-			"COBOL",
-			"ColdFusion",
-			"Erlang",
-			"Fortran",
-			"Groovy",
-			"Haskell",
-			"Java",
-			"JavaScript",
-			"Lisp",
-			"Perl",
-			"PHP",
-			"Python",
-			"Ruby",
-			"Scala",
-			"Scheme"
+			"Asp"
 		];
 		$( "#autocomplete" ).autocomplete({
 			source: availableTags
@@ -135,55 +116,71 @@
             var theme = getTheme();
             $('#mainSplitter').jqxSplitter({ width: 600, height: 480, theme: theme, panels: [{ size: 300 }, { size: 300}] });
         });
-        /*var customButtonsDemo = (function () {
-            var _collapsed = false;
-            function _createElements() {
-                $('#customWindow').jqxWindow({ theme: customButtonsDemo.config.theme, width: 400,
-                    height: 450, resizable: false,
-                    initContent: function () {
-                        $('#EnterButton').jqxButton({ theme: customButtonsDemo.config.theme, width: '80px', disabled: false });
-                    }
-                });
-            };
-            return {
-                config: {
-                    theme: null
-                },
-                init: function () {
-                    _createElements();
-					$('#customWindow').jqxWindow('draggable', false);
-                }
-            };
-        } ());
-        $(document).ready(function () {
-            var theme = $.data(document.body, 'theme', theme);
-            if (theme == undefined) theme = '';
-            customButtonsDemo.config.theme = theme;
-            customButtonsDemo.init();
-        });*/
-        function addRow() {
-        	 
-            var table = $("#drugs_table");
- 
-            var rowCount = table.rows.length;
-            var row = table.insertRow(rowCount);
- 
-           // var cell1 = row.insertCell(0);
-            var serialCol = row.insertCell(0);
-            seriCol.innerHTML = rowCount;
-            //cell1.appendChild(element1);
+	function addRow(){
+		
+		var table = document.getElementById("drugs_table");
+		var i = table.rows.length;
+		var rowClass;
+		if ( i%2 == 0 ){
+			rowClass = "drugs_row_even";
+		}
+		else {
+			rowClass = "drugs_row_odd"
+		}
+		var row = document.createElement('tr');
+		table.style.display = "block";
+		row.className = rowClass;
+	//	row.style.width = "100%";
+	
+		var ser = document.createElement('td');
+//		ser.class = "drug_col"
+//		ser.style.width = "10%";
+		ser.innerHTML = 1;
+		row.appendChild(ser);
+		
+		var	cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("ddList_drug_name").value;
+	//	cell.style.width = "15%";
+		row.appendChild(cell);
+		
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("dose").value;
+		//cell.style.width = "15%";
+		row.appendChild(cell);
 
-            
-            var drugCell = row.insertCell(1);
-            drugCell.innerHTML = $("#drugs").value;
- 
-            var startDateCell = row.insertCell(2);
-            startDateCell.innerHTML = $("#start_date").value;
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("ddList_drug_route").value;
+		row.appendChild(cell);
+//		cell2.style.width = "15%";
+		
 
-            var endDateCell = row.insertCell(2);
-            endDateCell.innerHTML = $("#end_date").value;
- 
-        }
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("start_date").value;
+//		cell.style.width = "15%";
+		row.appendChild(cell);
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("end_date").value;
+		row.appendChild(cell);
+//		cell4.style.width = "15%";
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML='<a href="#" onclick=removeRow()>Remove</a>';
+		row.appendChild(cell);
+//		cell5.style.width = "15%";
+		
+		table.appendChild (row);
+		
+	}
+	function removeRow(){
+		alert("remove yrr!");	
+	}
     </script> 
 	<style>
 	body{

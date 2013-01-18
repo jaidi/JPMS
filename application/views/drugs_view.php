@@ -13,8 +13,8 @@
 						<label class="cLabel" for="drug_name">Drug Name:</label>
 						<script type="text/javascript">
 							$(document).ready(function () {
-									$("#jqxComboBox").jqxComboBox({ autoComplete: true });
-									$("#jqxComboBox").jqxComboBox({ disabled: false });
+									$("#drug_name").jqxDropDownList({ autoComplete: true });
+									$("#drug_name").jqxDropDownList({ disabled: false });
 								var theme = getTheme();
 								var source = new Array();
 								var i =0; 
@@ -22,32 +22,10 @@
 											source[i] = <?php echo '\''.$drug.'\'';?>;
 											i++;
 								<?php 	} ?>
-							//	alert (i);
-							//	var source = new Array();
-								//json_encode($php_array);
-								
-								/*[
-									"Americano",
-									"Bicerin",
-									"Café au lait",
-									"Espresso",
-									"The Flat White",
-									"Frappuccino",
-									"Greek frappé coffee",
-									"Iced Coffee",
-									"Liqueur coffee"
-								];*/
-								// Create a jqxComboBox
-								$("#jqxComboBox").jqxComboBox({ source: source, selectedIndex: 0, width: '176', height: '18', theme: theme });
+								$("#drug_name").jqxDropDownList({ source: source, selectedIndex: 0, width: '176', height: '18', theme: theme });
 							});
 						</script>
-						<div style='float: left; ' id='jqxComboBox'></div>
-						<?php  //echo'<select name="drugs" id = "drugs">'; 
-						// For each value of the array assign variable name "city" 
-						//foreach(unserialize (DRUGS) as $drug){ 
-						  //  echo'<option value="'.$drug.'">'.$drug.'</option>'; 
-						//} 
-						//echo'</select>'; ?>
+						<div style='float: left;' id='drug_name'></div>
                         <br/>
 						<br/>
 						<label class="cLabel" for="dose">Dose:</label>
@@ -55,12 +33,22 @@
                         <br/>
 						<br/>
 						<label class="cLabel" for="route">Route:</label>
-						<?php  echo'<select name="drugs" id = "drugs">'; 
-						// For each value of the array assign variable name "city" 
-						foreach(unserialize (DRUG_ROUTES) as $drug_route){ 
-						    echo'<option value="'.$drug_route.'">'.$drug_route.'</option>'; 
-						} 
-						echo'</select>'; ?>
+						<script type="text/javascript">
+							$(document).ready(function () {
+									$("#drug_route").jqxDropDownList({ autoComplete: true });
+									$("#drug_route").jqxDropDownList({ disabled: false });
+								var theme = getTheme();
+								var source = new Array();
+								var i =0; 
+								<?php foreach (unserialize (DRUG_ROUTES) as $drug_route){?>
+											source[i] = <?php echo '\''.$drug_route.'\'';?>;
+											i++;
+								<?php 	} ?>
+								$("#drug_route").jqxDropDownList({ source: source, selectedIndex: 0, width: '176', height: '18', theme: theme });
+							});
+							
+						</script>
+						<div style='float: left; ' id='drug_route'></div>
                         <br/>
 						<br/>
 						<label class="cLabel" for="start_date">Start Date:</label>
@@ -82,44 +70,35 @@
 						<div >
                             <input type="button" value="Add" style="margin-bottom: 5px;" id="EnterButton" onclick= "addRow();"/><br />
                         </div>
-						
-                        <div >
-                            <input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
-                        </div>
                         </form>
 					</div>
                 </div>
             </div>
 			<div id="customWindow">
 				<div id="customWindowContent" style="overflow: hidden">
-					<table style="border:1px solid black; border-collapse: collapse; width:100%" id = "drugs_table" name = "drugs_table">
-						<tr style = "border:1px dotted;">
-							<th style = "border:1px dotted; width:10%">
+					<table 	 id = "drugs_table" name = "drugs_table">
+						<tr class="drugs_row">
+							<th class = "drugs_header">
 								Sr. #
 							</th>
-							<th style = "border:1px dotted;">
+							<th class = "drugs_header">
 								Drug
 							</th>
-							<th style = "border:1px dotted;">
+							<th class = "drugs_header">
+								Dose
+							</th>
+							<th class = "drugs_header">
+								Route
+							</th>
+							<th class = "drugs_header">
 								Start Date
 							</th>
-							<th style = "border:1px dotted;">
+							<th class = "drugs_header">
 								End Date
 							</th>
-						</tr>
-						<tr style = "border:1px dotted;">
-							<td style = "border:1px dotted;">
-							hello
-							</td>
-							<td style = "border:1px dotted;">
-							hiii
-							</td>
-							<td style = "border:1px dotted;">
-							hello
-							</td>
-							<td style = "border:1px dotted;">
-							hiii
-							</td>
+							<th class = "drugs_header">
+								Action
+							</th>
 						</tr>
 					</table>
 				</div>
