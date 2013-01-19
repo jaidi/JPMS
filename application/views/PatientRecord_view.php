@@ -239,6 +239,9 @@
 			<?php $this->load->view('drugs_view');	?>
 
 		</div>
+		<div id="tabs-4">
+			<?php $this->load->view('examination_view');	?>
+		</div>
 	</div>
  </body>
 </html>
