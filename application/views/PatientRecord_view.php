@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxdropdownlist.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcheckbox.js"></script>
     <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxexpander.js"></script>
+    <script type="text/javascript" src="../assets/jquery/js/drugs.js"></script>
 	<!-- Add End Drugs libraries -->
 		
 	<script>
@@ -116,71 +117,7 @@
             var theme = getTheme();
             $('#mainSplitter').jqxSplitter({ width: 600, height: 480, theme: theme, panels: [{ size: 300 }, { size: 300}] });
         });
-	function addRow(){
-		
-		var table = document.getElementById("drugs_table");
-		var i = table.rows.length;
-		var rowClass;
-		if ( i%2 == 0 ){
-			rowClass = "drugs_row_even";
-		}
-		else {
-			rowClass = "drugs_row_odd"
-		}
-		var row = document.createElement('tr');
-		table.style.display = "block";
-		row.className = rowClass;
-	//	row.style.width = "100%";
-	
-		var ser = document.createElement('td');
-//		ser.class = "drug_col"
-//		ser.style.width = "10%";
-		ser.innerHTML = 1;
-		row.appendChild(ser);
-		
-		var	cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML=document.getElementById("ddList_drug_name").value;
-	//	cell.style.width = "15%";
-		row.appendChild(cell);
-		
-		cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML=document.getElementById("dose").value;
-		//cell.style.width = "15%";
-		row.appendChild(cell);
 
-		cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML=document.getElementById("ddList_drug_route").value;
-		row.appendChild(cell);
-//		cell2.style.width = "15%";
-		
-
-		cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML=document.getElementById("start_date").value;
-//		cell.style.width = "15%";
-		row.appendChild(cell);
-
-		cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML=document.getElementById("end_date").value;
-		row.appendChild(cell);
-//		cell4.style.width = "15%";
-
-		cell = document.createElement('td');
-		cell.className = "drugs_col";
-		cell.innerHTML='<a href="#" onclick=removeRow()>Remove</a>';
-		row.appendChild(cell);
-//		cell5.style.width = "15%";
-		
-		table.appendChild (row);
-		
-	}
-	function removeRow(){
-		alert("remove yrr!");	
-	}
     </script> 
 	<style>
 	body{
@@ -227,6 +164,9 @@
 			<li><a href="#tabs-1">Patient Bio Data</a></li>
 			<li><a href="#tabs-2">Daily Progress Notes</a></li>
 			<li><a href="#tabs-3">Drugs</a></li>
+			<li><a href="#tabs-4">Examination</a></li>
+			<li><a href="#tabs-5">History</a></li>
+			<li><a href="#tabs-6">Operation</a></li>
 		</ul>
 		<div id="tabs-1">
 			<?php $this->load->view('PatientBioData_view');	?>
@@ -235,13 +175,18 @@
 			<?php $this->load->view('DPN_view'); ?>
 		</div>
 		<div id="tabs-3">
-
 			<?php $this->load->view('drugs_view');	?>
-
 		</div>
 		<div id="tabs-4">
-			<?php $this->load->view('examination_view');	?>
+			<?php $this->load->view('Examination_view');	?>
 		</div>
+		<div id="tabs-5">
+			<?php $this->load->view('History_view');	?>
+		</div>
+		<div id="tabs-6">
+			<?php //$this->load->view('Operation_view');	?>
+		</div>
+		
 	</div>
  </body>
 </html>

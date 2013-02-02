@@ -1,4 +1,4 @@
-   <div style="width: 100%; height: 350px;" id="jqxWidget">
+   <div style="width: 100%; height: 350px auto;" id="jqxWidget">
         <div
             id="mainDemoContainer">
             <div id="customWindow">
@@ -6,7 +6,7 @@
                     <span id="captureContainer" style="float: left">Patient Bio Data</span>
                 </div>-->
                 <div id="customWindowContent" style="overflow: hidden">
-                    <div style="margin: 10px; width: 30em">
+                    <div style="margin: 10px; width: 32em">
 						<?php echo form_open('PatientBioDataController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
@@ -21,8 +21,8 @@
                         <br/>
 						<br/>
 						<label class="cLabel" for="sex">Sex:</label>
-						<input style="width:5em, float:left" type="radio" id="sex" name="sex" value="male"/>Male
-						<input style="width:5em, float:left" type="radio" id="sex" name="sex" value="female"/>Female
+						<input style="" type="radio" id="sex" name="sex" value="male"/>Male
+						<input style="" type="radio" id="sex" name="sex" value="female"/>Female
                         <br/>
 						<br/>
 						<label class="cLabel" for="father_name">Father Name:</label>

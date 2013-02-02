@@ -1,57 +1,73 @@
 	function addRow(){
-		var table = $("#drugs_table");
-		var row = document.createElement('tr');
-		var header = document.createElement('th');
-		var cell = new Array();
-		var col = new Array();
-
-		if (!table.hasChildNodes()){
-			for (var c = 0; c<6; c++)
-			{
-				col[c]=document.createElement('td');
-				if (c==0)
-				{
-					col[c].innerHTML = "<h4>Sr. #</h4>"
-				}
-				else if (c==1)
-				{
-					col[c].innerHTML = "<h4>Drug</h4>"
-				}
-				else if (c==2)
-				{
-					col[c].innerHTML = "<h4>Dose</h4>"
-				}
-				else if (c==3)
-				{
-					col[c].innerHTML = "<h4>Route</h4>"
-				}
-				else if (c==4)
-				{
-					col[c].innerHTML = "<h4>Start Date</h4>"
-				}
-				else if (c==5)
-				{
-					col[c].innerHTML = "<h4>End Date</h4>";
-				}
-				header.appendChild(col[c]);
-				
-			}
+		
+		var table = document.getElementById("drugs_table");
+		var i = table.rows.length;
+		var rowClass;
+		if ( i%2 == 0 ){
+			rowClass = "drugs_row_even";
 		}
-			
-			table.appendChild(header);
-				
-			cell = document.createElement('td');
-			cell.innerHtml=$("#drug_name").value;
-			row.appendChild(cell);
-			cell.innerHtml=$("#dose").value;
-			row.appendChild(cell);
-			cell.innerHtml=$("#drug_route").value;
-			row.appendChild(cell);
-			cell.innerHtml=$("#start_date").value;
-			row.appendChild(cell);
-			cell.innerHtml=$("#end_date").value;
-			row.appendChild(cell);
-			
-			table.appendChild (row);
+		else {
+			rowClass = "drugs_row_odd"
+		}
+		var row = document.createElement('tr');
+		table.style.display = "block";
+		row.className = rowClass;
+	//	row.style.width = "100%";
+	
+		var ser = document.createElement('td');
+//		ser.class = "drug_col"
+//		ser.style.width = "10%";
+		ser.innerHTML = i;
+		row.appendChild(ser);
+		
+		var	cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("ddList_drug_name").value;
+	//	cell.style.width = "15%";
+		row.appendChild(cell);
+		
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("dose").value;
+		//cell.style.width = "15%";
+		row.appendChild(cell);
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("ddList_drug_route").value;
+		row.appendChild(cell);
+//		cell2.style.width = "15%";
+		
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("start_date").value;
+//		cell.style.width = "15%";
+		row.appendChild(cell);
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML=document.getElementById("end_date").value;
+		row.appendChild(cell);
+//		cell4.style.width = "15%";
+
+		cell = document.createElement('td');
+		cell.className = "drugs_col";
+		cell.innerHTML='<a href="#" onclick='+'"removeRow(['+row+'])"'+'>Remove</a>';
+		row.appendChild(cell);
+//		cell5.style.width = "15%";
+		
+		table.appendChild (row);
+		
+	}
+	function removeRow(row){
+		alert("remove yrr!");
+		var table = document.getElementById("drugs_table");
+	//	table.deleteRow(row);
+		for (var i=0; i<table.rows.length; i++){
+			if (row == table.childNodes[i]){
+			//	table.deleteRow(i);
+				break;
+			}
 		}
 	}
