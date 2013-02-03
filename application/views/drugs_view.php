@@ -4,7 +4,7 @@
             id="mainDemoContainer">
             <div id="customWindow">
                 <div id="customWindowContent" style="overflow: hidden">
-                    <div style="margin: 10px; width: 30em">
+                    <div style="margin: 10px; width: 32em">
 						<?php echo form_open('PatientBioDataController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />

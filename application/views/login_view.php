@@ -52,11 +52,11 @@
                     <div style="margin: 10px">
 						<?php echo form_open('verifylogin'); ?>
                         <label class="cLabel" for="username">Username:</label>
-                        <input class="cInput" type="text" size="20" style="width: 175px; border: 1px solid #aaa" id="username" name="username" />
+                        <input class="cInput"  value="wikiRao" size="20" style="width: 175px; border: 1px solid #aaa" id="username" name="username" />
 						<br/>
 						<br/>
 						<label class="cLabel" for="password">Password:</label>
-						<input class="cInput" type="password" size="20" style="width: 175px; border: 1px solid #aaa" id="password" name="password" />
+						<input class="cInput" type="password" value="123456" size="20" style="width: 175px; border: 1px solid #aaa" id="password" name="password" />
                         <br/><br/>
                         <div style="float: right">
                             <input type="submit" value="Login" style="margin-bottom: 5px;" id="loginButton"/><br />

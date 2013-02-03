@@ -184,7 +184,7 @@
 			<?php $this->load->view('History_view');	?>
 		</div>
 		<div id="tabs-6">
-			<?php //$this->load->view('Operation_view');	?>
+			<?php $this->load->view('Operation_view');	?>
 		</div>
 		
 	</div>
