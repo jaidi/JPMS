@@ -1,0 +1,72 @@
+body
+{
+	background-color:#eee;
+}
+
+table#drugs_table
+{
+	width:100%;
+	border:1px solid black;
+	border-collapse: collapse;
+#	background-color: #AAAAAA;
+	display: none;
+}
+
+th.drugs_header
+{
+	border:1px double;
+	width:17%;
+	background-color: #87b7d8;
+}
+
+tr.drugs_row_even
+{
+	border:1px dotted;
+	width:100%;
+	background-color:#eaf4fd;
+	
+}
+tr.drugs_row_odd{
+	border:1px dotted;
+	width:100%;
+}
+
+td.drugs_col
+{
+	border:1px dotted;
+	text-align: center;		
+}
+
+.cLabel
+{
+	display: block;
+	float: left;
+	width: 15em;
+}
+
+.cInput
+{
+	display: block;
+	float: left;
+	width: 16em;
+	border: 1px solid #aaa;
+	margin-bottom: 1em;
+}
+
+.cInputArea
+{
+	display: block;
+	width: 16em;
+	height: 6em;
+	border: 1px solid #aaa;
+	float: left;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.cAccordionContents
+{
+	height:100px auto;
+	width: 610px;
+}
+

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2013 at 06:43 PM
+-- Generation Time: Feb 06, 2013 at 06:37 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -60,18 +60,20 @@ INSERT INTO `dpn` (`id`, `almoner_number`, `pulse_rate`, `blood_pressure`, `resp
 CREATE TABLE IF NOT EXISTS `dpn_remarks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dpn_id` int(11) NOT NULL,
-  `pgr` varchar(50) DEFAULT NULL,
-  `sr` int(50) DEFAULT NULL,
-  `vs` int(50) DEFAULT NULL,
+  `pgr` text,
+  `sr` text,
+  `vs` text,
   `created_at` datetime DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `dpn_remarks`
 --
 
+INSERT INTO `dpn_remarks` (`id`, `dpn_id`, `pgr`, `sr`, `vs`, `created_at`, `updated_at`) VALUES
+(4, 2, 'laksdjflaskj', 'kesa hai baiii', 'aa paiii', NULL, '2013-01-12 22:24:05');
 
 -- --------------------------------------------------------
 
@@ -129,6 +131,8 @@ CREATE TABLE IF NOT EXISTS `examination` (
 -- Dumping data for table `examination`
 --
 
+INSERT INTO `examination` (`id`, `almoner_number`, `doctor_name`, `gpe`, `head`, `neck`, `thorax`, `abdomen`, `perineal`, `upper_limb`, `lower_limb`, `pr_pv`, `proctosigmoidoscopy`, `local`, `created_at`, `updated_at`) VALUES
+(0, 0, '0', 'lksdjf', 'lksdjf8l98*6', '*939*lk3sd9jf396', '5239dksjf6a3l953', '93', '96', '3985', '3', '93', '9', '3', NULL, '2013-02-02 18:46:15');
 
 -- --------------------------------------------------------
 
@@ -152,12 +156,14 @@ CREATE TABLE IF NOT EXISTS `history` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `history`
 --
 
+INSERT INTO `history` (`id`, `almoner_number`, `doctor_name`, `presenting_complaint`, `hopi`, `past_history`, `active_problems`, `drug_allergies`, `bleeding_disorders`, `family_history`, `personal_history`, `provisional_diagnosis`, `created_at`, `updated_at`) VALUES
+(1, 123, '0', 'sljf', 'lksdfj', 'kldsjf', 'kldsjf', 'klsdfj', 'kldsfj', 'laksdfj', 'lksdfj', 'lksdfj', NULL, '2013-02-03 03:33:03');
 
 -- --------------------------------------------------------
 
@@ -169,8 +175,8 @@ CREATE TABLE IF NOT EXISTS `operation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `almoner_number` int(11) NOT NULL,
   `bed_number` varchar(20) NOT NULL,
-  `starting_time` datetime NOT NULL,
-  `ending_time` datetime NOT NULL,
+  `starting_time` varchar(10) NOT NULL,
+  `ending_time` varchar(10) NOT NULL,
   `operation` text NOT NULL,
   `surgeon` varchar(50) NOT NULL,
   `nurse` varchar(50) NOT NULL,
@@ -183,12 +189,14 @@ CREATE TABLE IF NOT EXISTS `operation` (
   `drain` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `operation`
 --
 
+INSERT INTO `operation` (`id`, `almoner_number`, `bed_number`, `starting_time`, `ending_time`, `operation`, `surgeon`, `nurse`, `anaesthesia`, `anaesthesia_by`, `incision`, `findings`, `procedure`, `closure`, `drain`, `created_at`) VALUES
+(2, 123, 'sldk', '02:00', '05:00', 'aslkdjf', 'l;ksadfj;lak', 'lksdfja;slkj', 'sadfjlkj', 'lskdfjl', 'jsakldfj', 'ksdlfjl', 'slkdfj', 'lskdfjl', 'sdklfjl', '2013-02-03 16:21:28');
 
 -- --------------------------------------------------------
 
