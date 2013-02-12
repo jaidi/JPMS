@@ -21,13 +21,15 @@ Class PatientBioData extends CI_Model{
 	   //     	'telephoneNumber' => $patientBioData->telephoneNumber,
 	   //     	'bedNumber' => $patientBioData->bedNumber,
 	   //     	'admittedFrom' => $patientBioData->admittedFrom);
-   // $this->load
+	   //		$this->load
 	 return $this->db->insert('patient_bio_data', $patientBioData);   
 	}
 	
 	function getByAlmoner($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('patient_bio_data');
+		$query =  $this->db->get('patient_bio_data');
+		$result = $query->row(); 
+		return $result; // add check for num rows
 		//return 
 	}
 

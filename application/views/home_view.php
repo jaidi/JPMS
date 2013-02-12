@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
 	<title>Home</title>
-    <link rel="stylesheet" href="../assets/jquery/jqwidgets/styles/jqx.base.css" type="text/css"/>
-	<link rel="stylesheet" href="../assets/style.css" type="text/css"/>
-    <script type="text/javascript" src="../assets/jquery/scripts/gettheme.js"></script>
-    <script type="text/javascript" src="../assets/jquery/scripts/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxwindow.js"></script>
-    <script type="text/javascript" src="../assets/jquery/jqwidgets/jqxbuttons.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/jqwidgets/styles/jqx.base.css" type="text/css"/>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/style.css" type="text/css"/>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery/scripts/gettheme.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery/scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery/jqwidgets/jqxwindow.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript">
         var customButtonsDemo = (function () {
             var _collapsed = false;
@@ -48,11 +48,14 @@
                 <div id="customWindowHeader">
                     <span id="captureContainer" style="float: left">Home</span>
                 </div>
-                <div id="customWindowContent" style="overflow: hidden">
-					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Add New Record'); ?></label>
-					<br/>
-					<br/>
-					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Update Existing Record'); ?></label>
+                <div id="customWindowContent" style="overflow: hidden; text-align: center">
+					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Admit New Patient'); ?></label>
+					<br/><br/>
+					<label class="cLabel"><?php echo anchor('PatientRecordController', 'Admitted Patients'); ?></label>
+					<br/><br/>
+					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Follow Ups'); ?></label>
+					<br/><br/>
+					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Day Case'); ?></label>
 					<br/><br/>
                 </div>
             </div>

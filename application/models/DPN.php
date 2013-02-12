@@ -21,7 +21,8 @@ Class DPN extends CI_Model{
 	/**** dpn updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('dpn');
+		$query = $this->db->get('dpn');
+		return $query->row();
 	}
 	function getIdByAlmoner($almonerNumber){
 		//$this->db->select('id');

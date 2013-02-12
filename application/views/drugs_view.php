@@ -5,6 +5,8 @@
             <div id="customWindow">
                 <div id="customWindowContent" style="overflow: hidden">
                     <div style="margin: 10px; width: 32em">
+                    	<?php 
+							if (isset($drugs)){ ?>
 						<?php echo form_open('PatientBioDataController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
@@ -71,6 +73,7 @@
                             <input type="button" value="Add" style="margin-bottom: 5px;" id="EnterButton" onclick= "addRow();"/><br />
                         </div>
                         </form>
+                        <?php } ?>
 					</div>
                 </div>
             </div>

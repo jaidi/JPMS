@@ -4,6 +4,8 @@
             <div id="customWindow">
                 <div id="customWindowContent" style="overflow: hidden; width:100%;">
                     <div style="margin: 10px; float:left; width: 25% auto">
+                    	<?php 
+							if (isset($bioData)){ ?>
 						<?php echo form_open('ExaminationController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
@@ -45,6 +47,7 @@
                             <input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
                         </div>
                         </form>
+                        <?php } ?>
 					</div>
                 </div>
             </div>

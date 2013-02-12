@@ -15,7 +15,8 @@ class PatientBioDataController extends CI_Controller {
 	{
 		
 		$data['username'] = $this->session_data['username'];
-		$this->load->view('PatientRecord_view', $data);
+		//$this->load->view('PatientRecord_view', $data);
+		$this->load->view('NewPatient_view', $data);
 	}
 	else
 	{
@@ -35,7 +36,6 @@ class PatientBioDataController extends CI_Controller {
 	//$this->form_validation->set_rules('occupation', 'Occupation:', 'trim|required');
 	//$this->form_validation->set_rules('address', 'Address:', 'trim|required');
 	$this->form_validation->set_rules('telephone_number', 'Telephone #:', 'trim|required');
-	$this->form_validation->set_rules('bed_number', 'Bed #:', 'trim|required');
 	$this->form_validation->set_rules('admitted_from', 'Admitted From:', 'trim|required');
 	$this->form_validation->set_rules('almoner_number', 'Almoner #:', 'trim|required');
    
@@ -67,7 +67,6 @@ $username = $this->session_data['username'];
 		'occupation' 		=> $this->input->post('occupation'),
 		'address'			=> $this->input->post('address'),
 		'telephone_number' 	=> $this->input->post('telephone_number'),
-		'bed_number' 		=> $this->input->post('bed_number'),
 		'admitted_from' 	=> $this->input->post('admitted_from'),
 		'created_by'		=> $username);
    
@@ -105,7 +104,6 @@ $username = $this->session_data['username'];
     	$data['occupation'] = $row->occupation;
     	$data['address'] = $row->address;
     	$data['telephone_number'] = $row->telephone_number;
-    	$data['bed_number'] = $row->bed_number;
     	$data['admitted_from'] = $row->admitted_from;
 	}
  	return $data;

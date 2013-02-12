@@ -158,51 +158,13 @@
 	</style>
  </head>
  <body class="default">
-	<h2>Welcome </h2>
+	<h2>Welcome <?php echo $username; ?>!</h2>
 	<div id="tabs">
 		<ul>
-			<li><a href="#tabs-1">Search Patient</a></li>
-			<li><a href="#tabs-2">Patient Bio Data</a></li>
-			<li><a href="#tabs-3">Daily Progress Notes</a></li>
-			<li><a href="#tabs-4">Drugs</a></li>
-			<li><a href="#tabs-5">Examination</a></li>
-			<li><a href="#tabs-6">History</a></li>
-			<li><a href="#tabs-7">Operation</a></li>
-			<li><a href="#tabs-8">Investigation</a></li>
-			<li><a href="#tabs-9">Discharge</a></li>
-			<li><a href="#tabs-10">Images</a></li>
-			
+			<li><a href="#tabs-1">Patient Bio Data</a></li>
 		</ul>
-		
 		<div id="tabs-1">
-			<?php $this->load->view('Search_view');	?>
-		</div>
-		<div id="tabs-2">
 			<?php $this->load->view('PatientBioData_view');	?>
-		</div>
-		<div id="tabs-3">
-			<?php $this->load->view('DPN_view'); ?>
-		</div>
-		<div id="tabs-4">
-			<?php $this->load->view('drugs_view');	?>
-		</div>
-		<div id="tabs-5">
-			<?php $this->load->view('Examination_view');	?>
-		</div>
-		<div id="tabs-6">
-			<?php $this->load->view('History_view');	?>
-		</div>
-		<div id="tabs-7">
-			<?php $this->load->view('Operation_view');	?>
-		</div>
-		<div id="tabs-8">
-			<?php //$this->load->view('Investigation_view');	?>
-		</div>
-		<div id="tabs-9">
-			<?php //$this->load->view('Discharge_view');	?>
-		</div>
-		<div id="tabs-10">
-			<?php $this->load->view('Images_view', array('error' => ' ' ));	?>
 		</div>
 	</div>
  </body>
