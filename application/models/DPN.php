@@ -15,24 +15,24 @@ Class DPN extends CI_Model{
 
 	/**** dpn updateable ????*****/
 	function update($almonerNumber, $dpn){
-		$this->db->where('almoner_number', $almonerNumber);
-		$this->db->update($dpn, 'dpn');
+		$this->db->where(GENERAL_COLUMN_ALMONER_NUMBER, $almonerNumber);
+		$this->db->update(DPN_TABLE, $dpn);
 	}
 	/**** dpn updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
-		$this->db->where('almoner_number', $almonerNumber);
-		$query = $this->db->get('dpn');
+		$this->db->where(GENERAL_COLUMN_ALMONER_NUMBER, $almonerNumber);
+		$query = $this->db->get(DPN_TABLE);
 		
-	//	if($query->num_rows>0){
+		if($query->num_rows>0){
 			return $query->row();
-	//	}
+		}
 		
-	//	return null;
+		return null;
 	}
 	function getIdByAlmoner($almonerNumber){
 		//$this->db->select('id');
-		$this->db->where('almoner_number', $almonerNumber);
-		$query = $this->db->get('dpn');
+		$this->db->where(GENERAL_COLUMN_ALMONER_NUMBER, $almonerNumber);
+		$query = $this->db->get(DPN_TABLE);
 		if ($query->num_rows>0){
 			foreach ($query->result() as $rows)
 			{
