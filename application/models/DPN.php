@@ -22,7 +22,12 @@ Class DPN extends CI_Model{
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
 		$query = $this->db->get('dpn');
-		return $query->row();
+		
+	//	if($query->num_rows>0){
+			return $query->row();
+	//	}
+		
+	//	return null;
 	}
 	function getIdByAlmoner($almonerNumber){
 		//$this->db->select('id');

@@ -20,7 +20,13 @@ Class Drugs extends CI_Model{
 	/**** History updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('drugs');
+		$query = $this->db->get('drugs');
+	
+		if($query->num_rows>0){
+			return $query->row();
+		}
+		
+		return null;
 	}
 	
 	function cancelDrug(){

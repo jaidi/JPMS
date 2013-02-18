@@ -20,7 +20,13 @@ Class History extends CI_Model{
 	/**** History updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('history');
+		$query =  $this->db->get('history');
+		
+		if($query->num_rows>0){
+			return $query->row();
+		}
+		
+		return null;
 	}
 	
  }

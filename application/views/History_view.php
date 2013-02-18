@@ -5,37 +5,55 @@
                 <div id="customWindowContent" style="overflow: hidden; width:100%;">
                     <div style="margin: 10px; float:left; width: 25% auto">
                     	<?php 
-							if (isset($history)){ ?>
+							if (isset($history) && $history != null){ ?>
 						<?php echo form_open('HistoryController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number"  value = "<?php echo $history->almoner_number; ?>" />
 						<br/><br/>
 						<label class="cLabel" for="presenting_complaint">Presenting Complaint:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="presenting_complaint" name="presenting_complaint" value = "<?php echo $history->presenting_complaint; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="presenting_complaint" name="presenting_complaint" >
+							<?php echo $history->presenting_complaint; ?>
+						</textarea>
                         <br/><br/>
 						<label class="cLabel" for="hopi">HOPI:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="hopi" name="hopi" value = "<?php echo $history->hopi; ?>" ></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="hopi" name="hopi"  >
+							<?php echo $history->hopi; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="past_history">Past History:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="past_history" name="past_history" value = "<?php echo $history->past_history; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="past_history" name="past_history">
+							<?php echo $history->past_history; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="active_problems">Active Problems:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="active_problems" name="active_problems" value = "<?php echo $history->active_problems; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="active_problems" name="active_problems">
+							<?php echo $history->active_problems; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="drug_allergies">Drug Allergies:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="drug_allergies" name="drug_allergies" value = "<?php echo $history->drug_allergies; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="drug_allergies" name="drug_allergies">
+							<?php echo $history->drug_allergies; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="bleeding_disorders">Bleeding Disorders:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="bleeding_disorders" name="bleeding_disorders" value = "<?php echo $history->bleeding_disorders; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="bleeding_disorders" name="bleeding_disorders">
+							<?php echo $history->bleeding_disorders; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="family_history">Family History:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="family_history" name="family_history" value = "<?php echo $history->family_history; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="family_history" name="family_history">
+							<?php echo $history->family_history; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="personal_history">Personal History:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="personal_history" name="personal_history" value = "<?php echo $history->personal_history; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="personal_history" name="personal_history">
+							<?php echo $history->personal_history; ?>
+						</textarea>
                         <br/><br/>						
 						<label class="cLabel" for="provisional_diagnosis">Provisional Diagnosis:</label>
-						<textarea class="cInputArea" rows="5" cols="50" size="256" id="provisional_diagnosis" name="provisional_diagnosis" value = "<?php echo $history->provisional_diagnosis; ?>"></textarea>
+						<textarea class="cInputArea" rows="5" cols="50" size="256" id="provisional_diagnosis" name="provisional_diagnosis">
+							<?php echo $history->provisional_diagnosis; ?>
+						</textarea>
                         <br/><br/>
                         <div >
                             <input type="submit" value="Enter" style="margin-bottom: 5px;" id="EnterButton"/><br />
