@@ -112,6 +112,17 @@ define('PATIENT_BIO_DATA_TABLE', 'patient_bio_data');
 	define('PATIENT_BIO_DATA_COLUMN_DATE_OF_ADMISSION',	'date_of_admission');
 	define('PATIENT_BIO_DATA_COLUMN_ADMITTED_FROM',	'admitted_from');
 
+define('HISTORY_TABLE', 'patient_bio_data');
+	define('HISTORY_COLUMN_DOCTOR_NAME',	'doctor_name');
+	define('HISTORY_COLUMN_PRESENTING_COMPLAINT',	'presenting_complaint');
+	define('HISTORY_COLUMN_HOPI',	'hopi');
+	define('HISTORY_COLUMN_PAST_HISTORY',	'past_history');
+	define('HISTORY_COLUMN_ACTIVE_PROBLEMS',	'active_problems');
+	define('HISTORY_COLUMN_DRUG_ALLERGIES',	'drug_allergies');
+	define('HISTORY_COLUMN_BLEEDING_DISORDERS',	'bleeding_disorders');
+	define('HISTORY_COLUMN_FAMILY_HISTORY',	'family_history');
+	define('HISTORY_COLUMN_PERSONAL_HISTORY',	'personal_history');
+	define('HISTORY_COLUMN_PROVISIONAL_DIAGNOSIS',	'provisional_diagnosis');
 
 define('MINUTES', serialize($MINUTES_ARRAY));
 /* End of file constants.php */
