@@ -62,7 +62,7 @@ $DRUGS_ARRAY= array(
   'arq-e-takhum balngoo');
 
 define('DRUGS',serialize($DRUGS_ARRAY));
-/* 		*****************drug routes***************/
+/* 		*****************Drug routes***************/
 $DRUGS_ROUTES_ARRAY = array(
   'oral',
   'vein');
@@ -84,5 +84,15 @@ $MINUTES_ARRAY = array(
 	'51', '52', '53', '54', '55', '56', '57', '58', '59'
 );
 define('MINUTES', serialize($MINUTES_ARRAY));
+
+/* 		*****************Security roles***************/
+$ROLE = array(
+	'Administrator',
+	'User'
+);
+define('ROLE',serialize($ROLE));
+define('ADMINISTRATOR', 0);
+define('USER', 1);
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

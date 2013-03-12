@@ -41,7 +41,7 @@
  </head>
  <body class="default">
       
-   <div style="width: 100%; height: 650px;" id="jqxWidget">
+   <div style="width: 100%; height: 650px auto;" id="jqxWidget">
         <div
             id="mainDemoContainer">
             <div id="customWindow">
@@ -49,14 +49,21 @@
                     <span id="captureContainer" style="float: left">Home</span>
                 </div>
                 <div id="customWindowContent" style="overflow: hidden; text-align: center">
+					<input type="text" name="test" value="<?php echo  $type;//echo $sess_array['username']; ?>" />
 					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Admit New Patient'); ?></label>
-					<br/><br/>
+					<br/>
 					<label class="cLabel"><?php echo anchor('PatientRecordController', 'Admitted Patients'); ?></label>
-					<br/><br/>
+					<br/>
 					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Follow Ups'); ?></label>
-					<br/><br/>
+					<br/>
 					<label class="cLabel"><?php echo anchor('PatientBioDataController', 'Day Case'); ?></label>
-					<br/><br/>
+					<br/>
+					<label class="cLabel">
+						<?php
+							if ($type == ADMINISTRATOR)
+								echo anchor('RolesController/getAllUsers', 'Assign Roles'); 
+						?>
+					</label>
                 </div>
             </div>
         </div>

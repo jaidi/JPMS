@@ -70,3 +70,36 @@ td.drugs_col
 	width: 610px;
 }
 
+
+table#roles_table
+{
+	width:99%;
+	border:1px solid black;
+	border-collapse: collapse;
+	display: block;
+}
+
+th.roles_header
+{
+	border:1px double;
+	width:1%;
+	background-color: #87b7d8;
+}
+
+td.roles_col
+{
+	border:1px dotted;
+	text-align: center;		
+}
+
+tr.roles_row_even
+{
+	border:1px dotted;
+	width:100%;
+	background-color:#eaf4fd;
+	
+}
+tr.roles_row_odd{
+	border:1px dotted;
+	width:100%;
+}

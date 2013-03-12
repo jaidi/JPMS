@@ -61,7 +61,6 @@
 		
 	}
 	function removeRow(row){
-		alert("remove yrr!");
 		var table = document.getElementById("drugs_table");
 	//	table.deleteRow(row);
 		for (var i=0; i<table.rows.length; i++){
