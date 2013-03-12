@@ -8,7 +8,7 @@
                 <div id="customWindowContent" style="overflow: hidden">
                     <div style="margin: 10px; width: 32em">
 						<?php 
-							if (isset($bioData)){ ?>
+							if (isset($bioData) && $bioData != null){ ?>
 						<?php echo form_open('PatientBioDataController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
                         <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" value="<?php echo $bioData->almoner_number; ?>" />
@@ -40,7 +40,7 @@
                         <br/>
 						<br/>
 						<label class="cLabel" for="telephone_number">Telephone Number:</label>
-						<input class="cInput" type="text" size="20" id="telephone_number" name="telephone_number" value="<?php echo $bioData->telephone_number; ?>" />
+						<input class="cInput" type="text" size="20" id="telephone_number" name="telephone_number" value="<?php echo $bioData->telephone_number; ?>"  />
                         <br/>
 						<br/>
 						<label class="cLabel" for="admitted_from">Admitted From:</label>

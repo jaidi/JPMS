@@ -20,7 +20,13 @@ Class Examination extends CI_Model{
 	/**** examination updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('examination');
+		$query = $this->db->get('examination');
+		
+		if($query->num_rows>0){
+			return $query->row();
+		}
+		
+		return null;
 	}
 	
  }

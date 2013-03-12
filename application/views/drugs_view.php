@@ -6,10 +6,10 @@
                 <div id="customWindowContent" style="overflow: hidden">
                     <div style="margin: 10px; width: 32em">
                     	<?php 
-							if (isset($drugs)){ ?>
+							if (isset($drugs) && $drugs != null){ ?>
 						<?php echo form_open('PatientBioDataController/validateAndLoad'); ?>
                         <label class="cLabel" for="almoner_number">Almoner Number:</label>
-                        <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" />
+                        <input class="cInput" type="text" size="20" id="almoner_number" name="almoner_number" value="<?php echo $drugs->almoner_number; ?>" />
 						<br/>
 						<br/>
 						<label class="cLabel" for="drug_name">Drug Name:</label>
@@ -31,7 +31,7 @@
                         <br/>
 						<br/>
 						<label class="cLabel" for="dose">Dose:</label>
-						<input class="cInput" type="text" size="20" id="dose" name="dose" />
+						<input class="cInput" type="text" size="20" id="dose" name="dose" value="<?php echo $drugs->dose; ?>" />
                         <br/>
 						<br/>
 						<label class="cLabel" for="route">Route:</label>
@@ -54,19 +54,19 @@
                         <br/>
 						<br/>
 						<label class="cLabel" for="start_date">Start Date:</label>
-						<input class="cInput" type="text" size="50" id="start_date" name="start_date" />
+						<input class="cInput" type="text" size="50" id="start_date" name="start_date" value="<?php echo $drugs->almoner_number; ?>"  />
                         <br/>
 						<br/>
 						<label class="cLabel" for="end_date">End Date:</label>
-						<input class="cInput" type="text" size="50" id="end_date" name="end_date" />
+						<input class="cInput" type="text" size="50" id="end_date" name="end_date"  value="<?php echo $drugs->almoner_number; ?>" />
                         <br/>
 						<br/>
 						<label class="cLabel" for="prescribed_by">Prescribed By:</label>
-						<input class="cInput" type="text" size="20" id="prescribed_by" name="prescribed_by" />
+						<input class="cInput" type="text" size="20" id="prescribed_by" name="prescribed_by"  value="<?php echo $drugs->almoner_number; ?>" />
                         <br/>
 						<br/>
 						<label class="cLabel" for="cancelled_by">Cancelled By:</label>
-						<input class="cInput" type="text" size="20" id="cancelled_by" name="cancelled_by" />
+						<input class="cInput" type="text" size="20" id="cancelled_by" name="cancelled_by"  value="<?php echo $drugs->almoner_number; ?>" />
                         <br/>
 						<br/>
 						<div >

@@ -10,32 +10,17 @@ Class PatientBioData extends CI_Model{
 
 	function add($patientBioData)
  	{
-	   
-	   // $data = array(
-	   // 		'almonerNumber' =>$patientBioData->almonerNumber,
-	   //     	'name' => $patientBioData->name,
-	   //     	'age' => $patientBioData->age,
-	   //     	'sex' => $patientBioData->fatherName,
-	   //     	'occupation' => $patientBioData->occupation,
-	   //     	'address' => $patientBioData->address,
-	   //     	'telephoneNumber' => $patientBioData->telephoneNumber,
-	   //     	'bedNumber' => $patientBioData->bedNumber,
-	   //     	'admittedFrom' => $patientBioData->admittedFrom);
-	   //		$this->load
-	 return $this->db->insert('patient_bio_data', $patientBioData);   
+	 	return $this->db->insert(PATIENT_BIO_DATA_TABLE, $patientBioData);   
 	}
 	
 	function getByAlmoner($almonerNumber){
-		$this->db->where('almoner_number', $almonerNumber);
-		$query =  $this->db->get('patient_bio_data');
-		$result = $query->row(); 
-		return $result; // add check for num rows
-		//return 
+		$this->db->where(GENERAL_COLUMN_ALMONER_NUMBER, $almonerNumber);
+		return $this->db->get(PATIENT_BIO_DATA_TABLE)->row();
 	}
-
+	
 	function updateByAlmoner($almonerNumber, $patientBioData){
-		$this->db->where('almoner_number', $almonerNumber);
-		$this->db->update('patient_bio_data', $patientBioData);
+		$this->db->where(GENERAL_COLUMN_ALMONER_NUMBER, $almonerNumber);
+		$this->db->update(PATIENT_BIO_DATA_TABLE, $patientBioData);
 	}
 }
 ?>

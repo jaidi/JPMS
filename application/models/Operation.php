@@ -20,7 +20,13 @@ Class Operation extends CI_Model{
 	/**** History updateable ????*****/
 	function getByAlmonerNumber($almonerNumber){
 		$this->db->where('almoner_number', $almonerNumber);
-		return $this->db->get('operation');
+		$query =  $this->db->get('operation');
+		
+		if($query->num_rows>0){
+			return $query->row();
+		}
+		
+		return null;
 	}
 	
  }
